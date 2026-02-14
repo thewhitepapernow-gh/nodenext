@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../prisma/generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model ChatLog {
+  id        Int      @id @default(autoincrement())
+  query     String
+  answer    String
+  createdAt DateTime @default(now())
+}
